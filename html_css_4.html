@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<header>
+    <meta charset="utf-8">
+    <title>布局练习</title>
+    <style>
+        .shop-header{
+            position: relative;
+            width: 375px;
+        }
+        .shop-header img{
+            width:100%;
+            height: 100%;
+        }
+        .shop-header-search{
+            position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            height: 44px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-back{
+            width: 40px;
+            height: 44px;
+        }
+        .search-back span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 12px 0 0 10px;
+            background:url(icon/icon-back.png) no-repeat;
+            background-size: contain;
+        }
+        .search-input{
+            flex: 1;
+            position: relative;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            /* 文本溢出时的处理 clip修剪文本,ellipsis显示省略号 string特定字符显示*/
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border-radius: 30px;
+            background-color: #f7f7f7;
+        }
+        .search-input::before{
+            position:absolute;
+            left: 8px;
+            top:5px;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(icon/search.png) no-repeat;
+            background-size: contain;
+        }
+        .search-input input{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            width: 80%;
+            margin-top: -1px;
+            margin-left: 30px;
+            font-size: 14px;
+            color: #999;
+            border: none;
+            background: none;
+            appearance: none;
+            outline:none;
+            -webkit-appearance:none;
+        }
+        .search-btn{
+            padding: 10px;
+            color: #f0f0f0;
+        }
+        .shop-header-content{
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+        .shop-info{
+            display: flex;
+            width:80%;
+        }
+        .shop-info-logo{
+            margin-left: 5px;
+        }
+        .shop-info-logo img{
+            max-width: 100px;
+            height: 80%;
+        }
+        .shop-info-box{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        .shop-info-name{
+            font-size: 14px;
+            color:#fff;
+        }
+        .shop-focus{
+            position:absolute;
+            top:0;
+            right: 0;
+            display: flex;
+            flex-direction:column;
+        }
+        .shop-focus span{
+            font-size: 12px;
+            color: #fff;
+        }
+        .shop-focus-btn{
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            padding: 0 5px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #f44336;
+        }
+    </style>
+</header>
+<body>
+    <div class="shop-header">
+        <div class="shop-header-search">
+            <div class="search-back">
+                <span></span>
+            </div>
+            <div class="search-input">
+                <input type="text" placeholder="搜本店">
+            </div>
+            <div class="search-btn">搜索</div>
+        </div>
+        <img src="icon/shop-header-background.jpg" alt="店铺头背景图">
+        <div class="shop-header-content">
+            <div class="shop-info">
+                <div class="shop-info-logo">
+                    <img src="icon/shop_logo.png" alt="店铺logo">
+                </div>
+                <div class="shop-info-box">
+                    <div class="shop-info-name">湖北武汉格力旗舰店</div>
+                    <div class="shop-info-desc"></div>
+                </div>
+            </div>
+            <div class="shop-focus">
+                <span class="shop-focus-btn">已关注</span>
+                <span>5人关注</span>
+            </div>
+        </div>
+    </div>
+</body>

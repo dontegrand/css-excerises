@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <header>
     <meta charset="utf-8">
-    <title>布局练习</title>
+    <title>苦练布局</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
     <style>
-        .shop-header{
+        .shop-header {
             position: relative;
-            width: 375px;
         }
-        .shop-header img{
-            width:100%;
+
+        .shop-header img {
+            width: 100%;
             height: 100%;
         }
-        .shop-header-search{
+
+        .shop-header-search {
             position: absolute;
-            top:0;
+            top: 0;
             left: 0;
             right: 0;
             height: 44px;
-            display:flex;
+            display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .search-back{
+
+        .search-back {
             width: 40px;
             height: 44px;
         }
-        .search-back span{
+
+        .search-back span {
             display: inline-block;
             width: 20px;
             height: 20px;
             margin: 12px 0 0 10px;
-            background:url(icon/icon-back.png) no-repeat;
+            background: url(icon/icon-back.png) no-repeat;
             background-size: contain;
         }
-        .search-input{
+
+        .search-input {
             flex: 1;
             position: relative;
             height: 30px;
@@ -45,17 +50,19 @@
             border-radius: 30px;
             background-color: #f7f7f7;
         }
-        .search-input::before{
-            position:absolute;
+
+        .search-input::before {
+            position: absolute;
             left: 8px;
-            top:5px;
+            top: 5px;
             content: "";
             width: 20px;
             height: 20px;
             background: url(icon/search.png) no-repeat;
             background-size: contain;
         }
-        .search-input input{
+
+        .search-input input {
             display: inline-block;
             height: 30px;
             line-height: 30px;
@@ -67,51 +74,61 @@
             border: none;
             background: none;
             appearance: none;
-            outline:none;
-            -webkit-appearance:none;
+            outline: none;
+            -webkit-appearance: none;
         }
-        .search-btn{
+
+        .search-btn {
             padding: 10px;
             color: #f0f0f0;
         }
-        .shop-header-content{
+
+        .shop-header-content {
             position: absolute;
             left: 10px;
             right: 10px;
             bottom: 10px;
         }
-        .shop-info{
+
+        .shop-info {
             display: flex;
-            width:80%;
+            width: 80%;
         }
-        .shop-info-logo{
+
+        .shop-info-logo {
             margin-left: 5px;
         }
-        .shop-info-logo img{
+
+        .shop-info-logo img {
             max-width: 100px;
             height: 80%;
         }
-        .shop-info-box{
+
+        .shop-info-box {
             display: flex;
             flex-direction: column;
             margin-left: 10px;
         }
-        .shop-info-name{
+
+        .shop-info-name {
             font-size: 14px;
-            color:#fff;
+            color: #fff;
         }
-        .shop-focus{
-            position:absolute;
-            top:0;
+
+        .shop-focus {
+            position: absolute;
+            top: 0;
             right: 0;
             display: flex;
-            flex-direction:column;
+            flex-direction: column;
         }
-        .shop-focus span{
+
+        .shop-focus span {
             font-size: 12px;
             color: #fff;
         }
-        .shop-focus-btn{
+
+        .shop-focus-btn {
             display: inline-block;
             height: 20px;
             line-height: 20px;
@@ -120,8 +137,86 @@
             border-radius: 5px;
             background-color: #f44336;
         }
+
+        .shop-tab {
+            display: flex;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+        }
+
+        .shop-tab li {
+            flex: 1;
+            color: #aeaeae;
+            text-align: center;
+            border-bottom: 1px solid #e4e4e4;
+        }
+
+        .shop-tab li p {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .shop-tab li p span {
+            display: block;
+        }
+
+        .shop-tab li p span:nth-child(2) {
+            line-height: 20px;
+        }
+
+        .shop-tab li p span img {
+            display: block;
+            height: 20px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            display: flex;
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+        }
+
+        .nav li {
+            flex: 1;
+            background-color: #fff
+        }
+
+        .nav li span {
+            color: #232326;
+            font-size: 14px;
+        }
+
+        .shop-goods-ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .shop-goods-ul a {
+            -webkit-box-orient: vertical;
+            flex: 0 1 50%;
+        }
+
+        .shop-goods-ul li {
+            border: 1px solid #f5f5f5;
+            background-color: #fff;
+            box-sizing: border-box;
+
+        }
+
+        .img-box {
+            padding: 5px;
+            max-height: 160px;
+            text-align: center;
+        }
+
+        .img-box img {
+            width: 100%;
+        }
     </style>
 </header>
+
 <body>
     <div class="shop-header">
         <div class="shop-header-search">
@@ -145,9 +240,146 @@
                 </div>
             </div>
             <div class="shop-focus">
-                <span class="shop-focus-btn">已关注</span>
+                <span class="shop-focus-btn">关注</span>
                 <span>5人关注</span>
             </div>
         </div>
+    </div>
+    <div class="shop-list">
+        <ul class="shop-tab">
+            <li class="shop-tab-home">
+                <P>
+                    <span><img src="icon/home.png"></span>
+                    <span>首页</span>
+                </P>
+            </li>
+            <li class="shop-tab-recommand">
+                <p>
+                    <span><img src="icon/new.png"></span>
+                    <span>推荐</span>
+                </p>
+            </li>
+            <li class="shop-tab-all">
+                <p>
+                    <span><img src="icon/all.png"></span>
+                    <span>商品</span>
+                </p>
+            </li>
+            <li class="shop-tab-coupon">
+                <p>
+                    <span><img src="icon/quan.png"></span>
+                    <span>优惠券</span>
+                </p>
+            </li>
+            <li class="shop-tab-category">
+                <p>
+                    <span><img src="icon/category.png"></span>
+                    <span>分类</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="shop-sort">
+        <ul class="nav">
+            <li><span>销量</span></li>
+            <li><span>价格</span></li>
+            <li><span>评价</span></li>
+            <li><span>时间</span></li>
+        </ul>
+    </div>
+    <div class="shop-goods">
+        <ul class="shop-goods-ul">
+            <a>
+                <li>
+                    <div class="img-box">
+                        <img src="icon/product.jpg">
+                    </div>
+                    <div class="product-desc">产品描述描述产品测试功能大小型号等等</div>
+                    <p class="product-prices">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <div class="img-box">
+                        <img src="icon/product.jpg">
+                    </div>
+                    <div class="product-desc">产品描述描述产品测试功能大小型号等等</div>
+                    <p class="product-prices">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <div class="img-box">
+                        <img src="icon/product.jpg">
+                    </div>
+                    <div class="product-desc">产品描述描述产品测试功能大小型号等等</div>
+                    <p class="product-prices">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <div class="img-box">
+                        <img src="icon/product.jpg">
+                    </div>
+                    <div class="product-desc">产品描述描述产品测试功能大小型号等等</div>
+                    <p class="product-prices">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <div class="img-box">
+                        <img src="icon/product.jpg">
+                    </div>
+                    <div class="product-desc">产品描述描述产品测试功能大小型号等等</div>
+                    <p class="product-prices">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <div class="img-box">
+                        <img src="icon/product.jpg">
+                    </div>
+                    <div class="product-desc">产品描述描述产品测试功能大小型号等等</div>
+                    <p class="product-prices">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+            </a>
+            <a>
+                <li>
+                    <div class="img-box">
+                        <img src="icon/product.jpg">
+                    </div>
+                    <div class="product-desc">产品描述描述产品测试功能大小型号等等</div>
+                    <p class="product-prices">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </li>
+            </a>
+        </ul>
     </div>
 </body>

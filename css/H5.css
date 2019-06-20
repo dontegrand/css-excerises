@@ -1,0 +1,6 @@
+.img-div{
+  height: 500px;
+  border: 1px solid red;
+  background:url("../icon/product.jpg") no-repeat center;
+  background-size: contain;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width,inital-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三栏布局</title>
+    <style>
+        /* 浮动布局：浮动不会影响BFC的内容 
+        .left, .right, .main{
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .left{
+            width: 300px;
+            float: left;
+            background: red;
+        }
+        .right{
+            width: 300px;
+            float: right;
+            background:blue;
+        }
+        .main{
+            margin:0 300px;
+            background: gold;
+        }*/
+
+        /* 绝对定位布局，宽度太小时，中间会被遮挡，优点是主题内容优先加载
+        .left,.right,.main{
+            height: 100px;
+        }
+        .container{
+            position: relative;
+        }
+        .left{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 300px;
+            background: red;
+        }
+        .right{
+            position:absolute;
+            top: 0;
+            right:0;
+            width:300px;
+            background:blue;
+        }
+        .main{
+            margin:0 300px;
+            background:gold;
+        } */
+
+        /* flex布局，代码简单，结构清晰，主流实现方式，不兼容低版本ie
+        .container{
+            display: flex;
+        }
+        .left,.right,.main{
+            height: 100px;
+        }
+        .left{
+            flex: 0 0 300px; //放大，缩小 ，所占空间
+            background:rebeccapurple;
+        }
+        .right{
+            flex:0 0 300px;
+            background:blue;
+        }
+        .main{
+            flex:1 1 auto;
+            background:red;
+        } */
+
+        /* grid布局，代码简单，兼容性有待提高
+        .container{
+            display: grid;
+            grid-template-rows: 100px;
+            grid-template-columns: 300px 1fr 300px;
+        }
+        .left{
+            background:red;
+        }
+        .right{
+            background:blue;
+        }
+        .main{
+            background:gold;
+        } */
+
+        /* 表格布局，容器宽要设置100%，可以兼容低版本浏览器，宽度不够时左右会被缩小，但可以兼容低版本浏览器
+        .container{
+            display: table;
+            width: 100%;
+        }
+        .left,.right,.main{
+            display:table-cell;
+            height: 100px;
+        }
+        .left{
+            width:300px;
+            background:red;
+        }
+        .right{
+            width:300px;
+            background:blue;
+        }
+        main{
+            background: gold;
+        } */
+
+        /* 双飞燕布局，将左右两栏float挂在容器的两侧,通过margin调位置，
+        左右固定宽度，并且中间main优先加载 */
+        .container {
+           padding: 0;
+           overflow: hidden;
+        }
+        .main,
+        .left,
+        .right,
+        .in {
+            height: 100px;
+        }
+        .main {
+            float: left;
+            width: 100%;
+        }
+        .main .in {
+            margin: 0 300px;
+            background: yellow;
+        }
+        .left{
+            float: left;
+            width: 300px;
+            margin-left: -100%;
+            background: red;
+        }
+        .right {
+            float: right;
+            width: 300px;
+            margin-left: -300px;
+            background: blue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <article class="container">
+        <section class="main">
+            <main class="in">main</main>
+        </section>
+        <aside class="left">left</aside>
+        <aside class="right">right</aside>
+    </article>
+</body>

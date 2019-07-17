@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<header>
+    <meta charset="UTF-8">
+    <title>css渐变色</title>
+    <style>
+        .container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+        }
+        .main{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #FF3CAC;
+            background-image: linear-gradient(43deg,#FF3CAC 0%,#784BA0 50%,#2B86C5 100%);
+            background-image: -webkit-linear-gradient(43deg,#FF3CAC 0%,#784BA0 50%,#2B86C5 100%);
+            background-image: -moz-linear-gradient(43deg,#FF3CAC 0%,#784BA0 50%,#2B86C5 100%);
+            background-image: -o-linear-gradient(43deg,#FF3CAC 0%,#784BA0 50%,#2B86C5 100%);
+        }
+        .main span{
+            font-size: 12px;
+        }
+    </style>
+</header>
+<body>
+    <section class="container">
+        <main class="main">
+            <span>渐变色实践</span>
+        </main>
+    </section>
+</body>

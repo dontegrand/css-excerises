@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="utf-8">
+    <title>CSS世界</title>
+    <style>
+        :root {
+            /* IE模型：box-sizing: border-box,此模型下，元素的宽度计算为border+padding+content
+                    W3C模型: box-sizing: content-box,此模型下，元素的宽度为content盒模型的宽度
+                 */
+            box-sizing: border-box;
+        }
+
+        * {
+            box-sizing: inherit;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 200px;
+        }
+
+        .container {
+            /* padding设置为百分比，值是相对于父级元素来的
+                   padding为100%可以得到一个正方形
+                   padding为10% 50%可以得到一个宽高5:1的矩形
+                 */
+            padding: 100%;
+        }
+
+        .three-lines {
+            display: inline-block;
+            width: 12px;
+            height: 10px;
+            padding: 2px 0;
+            border-top: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            background: currentColor;
+            background-clip: content-box;
+        }
+
+        .double-circle {
+            width: 12px;
+            height: 12px;
+            padding: 2px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            background-color: currentColor;
+            background-clip: content-box;
+        }
+
+        .border-div {
+            position: relative;
+            width: 500px;
+            margin: 20px;
+        }
+
+        .border-div div {
+            box-sizing: content-box;
+            display: inline-block;
+        }
+
+        .border-div div:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            border: 20px solid;
+            border-color: blue red orange green;
+        }
+
+        .border-div div:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            border: 20px solid;
+            border-color: blue transparent transparent transparent;
+        }
+
+        .border-div div:nth-child(3) {
+            border: 20px solid;
+            border-color: blue transparent transparent transparent;
+        }
+
+        .border-div div:nth-child(4) {
+            border-style: solid;
+            border-width: 40px 20px;
+            border-color: blue transparent transparent transparent;
+        }
+
+        .border-div div:nth-child(5) {
+            border-style: solid;
+            border-width: 40px 20px;
+            border-color: blue blue transparent transparent;
+        }
+
+        .x-div {
+            line-height: 300px;
+            border: 1px solid black;
+        }
+
+        .x-div span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+            /* 空白节点+行高也能撑起div，是的垂直居中 */
+            vertical-align: middle;
+        }
+
+        .center-div {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.15);
+            text-align: center;
+            font-size: 0;
+            white-space: nowrap;
+            overflow: auto;
+        }
+
+        .center-div::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .dialog {
+            display: inline-block;
+            width: 400px;
+            height: 400px;
+            line-height: 400px;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 14px;
+            white-space:nowrap;
+            background: white;
+        }
+    </style>
+</header>
+
+<body>
+    <div class="container">
+    </div>
+    <div class="three-lines"></div>
+    <div class="double-circle"></div>
+    <!-- border制作三角形 -->
+    <div class="border-div">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="x-div">
+        x
+        <span></span>
+    </div>
+
+    <div class="center-div">
+        <div class="dialog">自适应弹出层</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>float布局</title>
+    <style>
+        .content {
+            /* width: 800px; */
+            overflow: hidden;
+        }
+
+        .box1 {
+            box-sizing: border-box;
+            float: left;
+            width: 100%;
+            height: 50px;
+            padding-right: 220px;
+            border: 1px solid #ccc;
+        }
+
+        .inner {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #f23;
+        }
+
+        .box2 {
+            float: right;
+            width: 200px;
+            height: 30px;
+            margin-left: -100%;
+            border: 1px solid #2fe;
+        }
+
+        .wrap {
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        .right-first{
+            /* width: 800px; */
+            overflow: hidden;
+        }
+        .right-content {
+            float: right;
+            margin-left: 100px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .text {
+            margin: 20px 0;
+        }
+
+        .avatar {
+            float: left;
+            margin-right: -80px;
+        }
+
+        .avatar img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+
+        .float-div {
+            /* width: 800px; */
+            /* overflow: hidden; */
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .title {
+            float: left;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .btn {
+            float: right;
+        }
+
+        .con {
+            padding-top: 10px;
+            /* 消除浮动，避免父级元素高度坍塌 */
+            clear: both;
+        }
+
+        /* 消除浮动类 */
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        
+        .fixed-auto-div{
+            /* width: 800px; */
+            height: 300px;
+            overflow: hidden;
+        }
+        .left-fixed{
+            float: left;
+            width: 200px;
+            height: 100%;
+            background: #2fe;
+        }
+        .right-auto{
+            overflow: auto;
+            height: 100%;
+            background: #f23;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 右侧定宽流式布局 -->
+    <div class="content">
+        <div class="box1">
+            <div class="inner"></div>
+        </div>
+        <div class="box2"></div>
+    </div>
+
+    <!-- 两个相邻的浮动元素，当第一个浮动元素的宽度为100%时，
+        第二个浮动元素会被挤到下面，通过添加负的 margin-left 
+        或者 margin-right 值（绝对值最少等于它自身的宽度），可以使它回到第一行。 -->
+    <div class="right-first">
+        <!-- 右侧重要内容 -->
+        <div class="right-content">
+            <div class="author">
+                <span class="name">哇哈哈</span>
+                <span class="date">2016-78-55</span>
+            </div>
+            <p class="text">
+                吃的再多也不长胖，好愁人啊，怎么能快速长胖呢，在线等，急！吃的再多也不长胖，好愁人啊，怎么能快速长胖呢，在线等，急！吃的再多也不长胖，好愁人啊，怎么能快速长胖呢，在线等，急！吃的再多也不长胖，好愁人啊，怎么能快速长胖呢，在线等，急！吃的再多也不长胖，好愁人啊，怎么能快速长胖呢，在线等，急！吃的再多也不长胖，好愁人啊，怎么能快速长胖呢，在线等，急！吃的再多也不长胖，好愁人啊，怎么能快速长胖呢，在线等，急！
+            </p>
+            <div class="meta">
+                <span class="msg-tag">赞</span>
+                <span class="msg-tag">回复</span>
+            </div>
+        </div>
+        <!-- 左侧内容 -->
+        <a href="#" class="avatar"><img src="../css_practice/icon/product.jpg" alt="头像"></a>
+
+    </div>
+
+    <!-- 标题栏既有文本也有删除等按钮，我们直接使用 float，而下面的内容部分我们通过 clear: both; 
+        来让显示位置正确。标题栏部分和内容部分的间距则通过给 .con 元素添加 padding 
+        而不是 margin 来控制，因为它的 margin 是相对于父容器的。 -->
+    <div class="float-div">
+        <p class="title">1.这是标题</p>
+        <button class="btn">按钮</button>
+        <div class="con">这里是具体内容</div>
+    </div>
+
+    <!-- 左侧定宽的流式布局（自适应两栏布局） -->
+    <div class="fixed-auto-div">
+        <div class="left-fixed"></div>
+        <div class="right-auto"></div>
+    </div>
+</body>
+
+</html>

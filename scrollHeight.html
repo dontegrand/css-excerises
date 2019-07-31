@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>各种宽高详解</title>
+        <style>
+            :root{
+                box-sizing: content-box;
+            }
+            *{
+                box-sizing: inherit;
+                margin: 0;
+                padding: 0;
+            }
+            #outer-div{
+                width:500px;
+                height: 500px;
+                margin: 10px;
+                border: 1px solid red;
+                padding: 5px;
+                text-align: center;
+                background: blue;
+                overflow: scroll;
+            }
+            #inner-div{
+                width: 700px;
+                height: 700px;
+                background: black;
+            }
+            .scroll-div{
+                height: 17px;
+                background: red;
+            }
+        </style>
+    </header>
+    <body>
+        <main>
+            <div id="outer-div">
+                <div id="inner-div">
+
+                </div>
+            </div>
+            <div class="scroll-div">
+
+            </div>
+        </main>
+    </body>
+</html>

@@ -4,7 +4,21 @@
         <meta charset="utf-8">
         <title>table test</title>
     </header>
+    <style>
+      html {
+        font-size: 100px;
+      }
+      .test {
+        width: 4rem;
+        height: 4rem;
+        background-color: pink;
+        margin: auto;
+      }
+    </style>
     <body>
+        <div class="test">
+
+        </div>
         <!--border表格的边框宽 colspan表示所占列数，rowspan所占行数 -->
         <table border="1">
             <tr>
@@ -27,5 +41,21 @@
                 <td colspan="3">prey to a lion</td>
             </tr>
         </table>
+        <script>
+          let changSize = function (doc, win) {
+              const docEl = doc.documentElement
+              const resizeEvt = 'orientationChange' in window ? 'orientationChange' : 'resize'
+              let refreshRem = function () {
+                  const designSize = 750 // 设计图尺寸
+                  const clientWidth = docEl.clientWidth // 窗口宽度
+                  let rem = 100 * (clientWidth / designSize)
+                  docEl.style.fontSize = rem + 'px'
+              }
+              if (!doc.addEventListener) return
+              win.addEventListener(resizeEvt, refreshRem, false)
+              doc.addEventListener('DOMContentLoaded', refreshRem, false)
+          }
+          changSize(document, window)
+        </script>
     </body>
 </html>
